@@ -152,19 +152,15 @@ Penjelasan:
   brand, 
   product_name, 
   SUM(sale_price) AS total_sales
-  pada tahap ini saya memilih kolom-kolom tertentu dan relevan untuk ditampilkan pada tabel data penjualan yang fokus pada produk, yaitu kolom 
-  (product_id, 
-  category, 
-  brand, 
-  product_name, 
-  SUM(sale_price) AS total_sales) pada kolom sale_price, saya jumlahkan dan saya beri nama kolom penjualannya dengan nama total_sales 
+  - pada tahap ini saya memilih kolom-kolom tertentu dan relevan untuk ditampilkan pada tabel data penjualan yang fokus pada produk
+  - pada kolom sale_price, saya jumlahkan dan saya beri nama kolom penjualannya dengan nama total_sales 
 3. Pada step From, saya meng-copy query sebelumnya karena saya mau dapatkan dan akses data dari output query tabel sebelumnya 
 4. GROUP BY 
   product_id, 
   category, 
   brand, 
   product_name
-  pada tahap ini saya mengeolompokan tabel pada kolom-kolom tersebut, sebelum nantinya saya urutkan berdasarkan penjualan tertinggi 
+  pada tahap ini saya mengelompokkan tabel pada kolom-kolom tersebut, sebelum nantinya saya urutkan berdasarkan penjualan tertinggi 
 5. ORDER BY 
   total_sales DESC
   pada tahap ini saya mengurutkan data berdasarkan penjualan tertinggi (total_sales), DESC artinya urutannya dari yang terbesar/tertinggi 
@@ -174,7 +170,7 @@ Notes :
 1. Apabila ingin membuat temporary table, dapat dilakukan di local komputer anda dengan mendownload datasetnya terlebih dahulu 
 2. temporary tabelnya dapat dinamakan report_monthly_orders_product_agg, sesuai dengan arahan atau instruksi soal 
 3. Berikut Query yang bisa anda pakai apabila anda mengakses data di local 
-4. Untuk penjelasan kurang lebih sama. Perbedaannya hanya pada proses pembuatan tabel, sehingga bisa langsung diakses di query selanjutnya tanpa copy query
+4. Untuk penjelasan kurang lebih sama, perbedaannya hanya pada proses pembuatan tabel, sehingga bisa langsung diakses di query selanjutnya tanpa copy query
 
 
 -- State the dataset 
