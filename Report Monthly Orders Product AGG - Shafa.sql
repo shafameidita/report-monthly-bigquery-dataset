@@ -26,7 +26,7 @@ LIMIT
 Penjelasan:
 1. Select * : Select all data 
 2. from  bigquery-public-data.thelook_ecommerce : akses data dari dataset thelook_ecommerce (bagian dari bigquery-public-data)
-3. bigquery-public-data.thelook_ecommerce apabila ditambahkan (.order_items, .products, atau .users) maka menanndakan tabel mana yang mau diakses (teble order_items, products, atau users)
+3. bigquery-public-data.thelook_ecommerce apabila ditambahkan (.order_items, .products, atau .users) maka menandakan tabel mana yang mau diakses (tabel order_items, products, atau users)
 
    
 -- Check the timestamp 
