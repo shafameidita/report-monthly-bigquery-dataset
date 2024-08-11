@@ -24,10 +24,11 @@ LIMIT
     100;
 
 Penjelasan:
-Select * : Select all data 
-from  bigquery-public-data.thelook_ecommerce : akses data dari dataset thelook_ecommerce (bagian dari bigquery-public-data)
-bigquery-public-data.thelook_ecommerce apabila ditambahkan (.order_items, .products, atau .users) maka menanndakan tabel mana yang mau diakses (teble order_items, products, atau users)
+1. Select * : Select all data 
+2. from  bigquery-public-data.thelook_ecommerce : akses data dari dataset thelook_ecommerce (bagian dari bigquery-public-data)
+3. bigquery-public-data.thelook_ecommerce apabila ditambahkan (.order_items, .products, atau .users) maka menanndakan tabel mana yang mau diakses (teble order_items, products, atau users)
 
+   
 -- Check the timestamp 
 SELECT 
   *
@@ -40,6 +41,7 @@ LIMIT 100;
 Penjelasan: 
 pada tahap ini, saya mau memastikan data order terbaru yang bisa diakses, dan didapatkan bahwa data ini masih terus update per hari ini (11-08-2024), maka untuk membuat temporary tabel penjualan produk saya akan memakai data pada bulan sebelumnya yaitu Juli 2024
 
+   
 -- Temporary table for all products in July 2024 (Do in Bigquery)
 SELECT 
   o.order_id, 
@@ -62,8 +64,7 @@ ON
 JOIN 
   `bigquery-public-data.thelook_ecommerce.users` u 
 ON 
-  o.user_id = u.id
-  
+  o.user_id = u.id  
 WHERE 
   status like 'Complete'
   AND o.created_at BETWEEN '2024-07-01' AND '2024-07-31';
@@ -115,11 +116,10 @@ FROM
   JOIN 
     `bigquery-public-data.thelook_ecommerce.users` u 
   ON 
-    o.user_id = u.id
-  
+    o.user_id = u.id  
   WHERE 
     o.status LIKE 'Complete'
-    AND o.created_at BETWEEN '2024-07-01' AND '2024-07-30') 
+    AND o.created_at BETWEEN '2024-07-01' AND '2024-07-31') 
 
 GROUP BY 
   product_id, 
